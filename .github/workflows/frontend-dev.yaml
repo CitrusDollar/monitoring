@@ -1,4 +1,4 @@
-name: dEURO Frontend DEV CI/CD
+name: cUSD Frontend DEV CI/CD
 
 on:
   push:
@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_ACCOUNT_NAME: stdfxdemdev
+  AZURE_ACCOUNT_NAME: stdfxcdtmdev
   AZURE_CDN_PROFILE: afd-dfx-api-dev
-  AZURE_CDN_ENDPOINT: fde-dfx-dem-dev
+  AZURE_CDN_ENDPOINT: fde-dfx-cdtm-dev
   AZURE_RESOURCE_GROUP: rg-dfx-api-dev
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
         run: npm run build
         working-directory: frontend
         env:
-          VITE_API_BASE_URL: https://dev.monitoring.deuro.com/api
+          VITE_API_BASE_URL: https://dev.monitoring.testnet.citrusdollar.com/api
 
       - name: Log in to Azure
         uses: azure/login@v2
